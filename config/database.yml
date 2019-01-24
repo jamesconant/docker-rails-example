@@ -1,0 +1,17 @@
+development:
+  host: postgres
+  adapter: postgresql
+  encoding: utf8
+  database: docker_rails_example
+  username: docker_rails_example
+  password: docker_rails_example
+  template: template1 # Required for UTF8 encoding
+
+test:
+  host: postgres
+  adapter: postgresql
+  encoding: utf8
+  database: docker_rails_example_test
+  username: docker_rails_example
+  password: docker_rails_example
+  template: template1 # Required for UTF8 encoding

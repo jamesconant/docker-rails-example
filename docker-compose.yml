@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    #command: bash --login xvfb-run bundle exec rspec spec/features/create_health_check_spec.rb
+    entrypoint: xvfb-run -a bundle exec rspec
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+
+  postgres:
+    build:
+      context: .
+      dockerfile: ./Postgres.dkr
+    environment:
+      - POSTGRES_USER=docker_rails_example
+      - POSTGRES_PASSWORD=docker_rails_example
+    ports:
+      - "5432:5432"
+    restart: always

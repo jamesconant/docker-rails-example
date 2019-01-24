@@ -1,0 +1,5 @@
+{
+  "name": "docker-rails-test",
+  "private": true,
+  "dependencies": {}
+}
